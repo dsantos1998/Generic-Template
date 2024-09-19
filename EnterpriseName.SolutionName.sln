@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnterpriseName.SolutionName.ProjectName", "EnterpriseName.SolutionName.ProjectName\EnterpriseName.SolutionName.ProjectName.csproj", "{D1F71161-33CF-47E0-8BE4-7911281EF187}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{B944B971-A986-461C-80E7-7A66C507E5B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infraestructure", "Infraestructure", "{E7DCF191-3BAC-4E84-87E6-02ABD72F78B0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interface", "Interface", "{F47C6C6D-2FF4-4732-9C18-238982BFD10C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1F71161-33CF-47E0-8BE4-7911281EF187}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1F71161-33CF-47E0-8BE4-7911281EF187}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1F71161-33CF-47E0-8BE4-7911281EF187}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1F71161-33CF-47E0-8BE4-7911281EF187}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DE4C4471-B790-4347-B54E-F4191C2DA344}
+	EndGlobalSection
+EndGlobal
