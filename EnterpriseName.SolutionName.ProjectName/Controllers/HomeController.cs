@@ -1,5 +1,6 @@
 using EnterpriseName.SolutionName.Resources;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using System.Net.Mime;
 using System.Reflection.Emit;
 
@@ -9,7 +10,7 @@ namespace EnterpriseName.SolutionName.APIRest.Controllers
     [Route("[controller]")]
     [Produces(MediaTypeNames.Application.Json)]
     [Consumes(MediaTypeNames.Application.Json)]
-    //[EnableRateLimiting("all-limiter")]
+    [EnableRateLimiting("all-limiter")]
     public class HomeController : ControllerBase
     {
         private readonly ILogger<HomeController> _logger;

@@ -2,7 +2,10 @@ using EnterpriseName.SolutionName.Domain.BLL;
 using EnterpriseName.SolutionName.Domain.BLL.Interfaces;
 using EnterpriseName.SolutionName.Interface.DLL;
 using EnterpriseName.SolutionName.Interface.Interfaces.DLL;
+using EnterpriseName.SolutionName.Resources;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.RateLimiting;
+using Serilog;
 using System.Globalization;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
@@ -13,6 +16,34 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+#region Serilog
+
+var logger = new LoggerConfiguration().ReadFrom.Configuration(builder.Configuration).Enrich.FromLogContext().CreateLogger();
+builder.Logging.ClearProviders();
+builder.Logging.AddSerilog(logger);
+
+#endregion
+
+#region Rate limiters
+
+builder.Services.AddRateLimiter(options =>
+{
+    options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+    options.OnRejected = async (context, token) =>
+    {
+        await context.HttpContext.Response.WriteAsync(Validations.TooManyRequests, cancellationToken: token);
+    };
+
+    options.AddTokenBucketLimiter(policyName: "all-limiter", limiterOptions =>
+    {
+        limiterOptions.TokensPerPeriod = 10;
+        limiterOptions.TokenLimit = 100;
+        limiterOptions.ReplenishmentPeriod = TimeSpan.FromMinutes(5);
+    });
+});
+
+#endregion
 
 #region Dependency injection
 
