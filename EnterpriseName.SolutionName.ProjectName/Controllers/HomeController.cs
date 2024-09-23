@@ -11,6 +11,7 @@ namespace EnterpriseName.SolutionName.APIRest.Controllers
     [Produces(MediaTypeNames.Application.Json)]
     [Consumes(MediaTypeNames.Application.Json)]
     [EnableRateLimiting("all-limiter")]
+    [ProducesResponseType(typeof(string), StatusCodes.Status429TooManyRequests)]
     public class HomeController : ControllerBase
     {
         private readonly ILogger<HomeController> _logger;
