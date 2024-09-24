@@ -15,10 +15,13 @@ namespace EnterpriseName.SolutionName.APIRest.Controllers
     public class HomeController : ControllerBase
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IConfiguration _configuration;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger,
+            IConfiguration configuration)
         {
             _logger = logger;
+            _configuration = configuration;
         }
 
         [HttpGet]
@@ -26,7 +29,8 @@ namespace EnterpriseName.SolutionName.APIRest.Controllers
         [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
         public IActionResult Get()
         {
-            return Ok($"Great! - {Labels.Example}");
+            string? connectionString = _configuration.GetConnectionString(_configuration["ActiveConnection"]);
+            return Ok($"Great! - {Labels.Example} - {connectionString}");
         }
     }
 }

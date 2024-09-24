@@ -8,6 +8,7 @@
     <UserSecretsId>48852546-0a5d-4d2a-9ecf-f1b5fed0ddd8</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
 	<InvariantGlobalization>false</InvariantGlobalization>
+	<DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,6 +23,10 @@
     <ProjectReference Include="..\EnterpriseName.SolutionName.Helpers\EnterpriseName.SolutionName.Helpers.csproj" />
     <ProjectReference Include="..\EnterpriseName.SolutionName.Models\EnterpriseName.SolutionName.Models.csproj" />
     <ProjectReference Include="..\EnterpriseName.SolutionName.Resources\EnterpriseName.SolutionName.Resources.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="logs\" />
   </ItemGroup>
 
 </Project>

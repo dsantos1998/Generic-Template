@@ -1,0 +1,16 @@
+# version: '3.4'
+
+services:
+    enterprisename.solutionname.apirest:
+        image: ${DOCKER_REGISTRY-}enterprisenamesolutionnameapirest
+        build:
+          context: .
+          dockerfile: EnterpriseName.SolutionName.APIRest/Dockerfile
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Production # Development - Production
+            - ASPNETCORE_HTTP_PORTS=8080
+            # - ASPNETCORE_HTTPS_PORTS=8081
+            # Overwrite appsettings.json values
+            - ActiveConnection=Production
+            - ConnectionStrings__Production=Data Source=IP_HERE_MODIFIED;Initial Catalog=DATABASE;User Id=test;Password=test
+            - Serilog__WriteTo__0__Args__path=logs/apirest/log-.txt
