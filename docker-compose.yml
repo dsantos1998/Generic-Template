@@ -1,11 +1,11 @@
 # version: '3.4'
 
 services:
-    DSM.MJMLEditor.apirest:
+    enterprisename.solutionname.apirest:
         image: ${DOCKER_REGISTRY-}enterprisenamesolutionnameapirest
         build:
           context: .
-          dockerfile: DSM.MJMLEditor.APIRest/Dockerfile
+          dockerfile: EnterpriseName.SolutionName.APIRest/Dockerfile
         environment:
             - ASPNETCORE_ENVIRONMENT=Production # Development - Production
             - ASPNETCORE_HTTP_PORTS=8080

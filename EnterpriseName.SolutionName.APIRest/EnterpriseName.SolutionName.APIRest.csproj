@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <UserSecretsId>48852546-0a5d-4d2a-9ecf-f1b5fed0ddd8</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	<InvariantGlobalization>false</InvariantGlobalization>
+	<DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="8.0.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EnterpriseName.SolutionName.BLL\EnterpriseName.SolutionName.BLL.csproj" />
+    <ProjectReference Include="..\EnterpriseName.SolutionName.DLL\EnterpriseName.SolutionName.DLL.csproj" />
+    <ProjectReference Include="..\EnterpriseName.SolutionName.Helpers\EnterpriseName.SolutionName.Helpers.csproj" />
+    <ProjectReference Include="..\EnterpriseName.SolutionName.Models\EnterpriseName.SolutionName.Models.csproj" />
+    <ProjectReference Include="..\EnterpriseName.SolutionName.Resources\EnterpriseName.SolutionName.Resources.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="logs\" />
+  </ItemGroup>
+
+</Project>

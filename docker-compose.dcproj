@@ -7,7 +7,7 @@
     <ProjectGuid>f994d0de-f539-4cc6-93a7-9e3c284cbb23</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
-    <DockerServiceName>DSM.MJMLEditor.apirest</DockerServiceName>
+    <DockerServiceName>enterprisename.solutionname.apirest</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.override.yml">
