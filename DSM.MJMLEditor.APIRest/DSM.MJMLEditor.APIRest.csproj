@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <UserSecretsId>48852546-0a5d-4d2a-9ecf-f1b5fed0ddd8</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	<InvariantGlobalization>false</InvariantGlobalization>
+	<DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="8.0.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DSM.MJMLEditor.BLL\DSM.MJMLEditor.BLL.csproj" />
+    <ProjectReference Include="..\DSM.MJMLEditor.DLL\DSM.MJMLEditor.DLL.csproj" />
+    <ProjectReference Include="..\DSM.MJMLEditor.Helpers\DSM.MJMLEditor.Helpers.csproj" />
+    <ProjectReference Include="..\DSM.MJMLEditor.Models\DSM.MJMLEditor.Models.csproj" />
+    <ProjectReference Include="..\DSM.MJMLEditor.Resources\DSM.MJMLEditor.Resources.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="logs\" />
+  </ItemGroup>
+
+</Project>

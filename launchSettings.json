@@ -4,7 +4,7 @@
       "commandName": "DockerCompose",
       "commandVersion": "1.0",
       "serviceActions": {
-        "enterprisename.solutionname.apirest": "StartDebugging"
+        "DSM.MJMLEditor.apirest": "StartDebugging"
       }
     }
   }
